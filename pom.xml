@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.pfq.trick</groupId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <artifactId>trick</artifactId>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.2.RELEASE</version>
+    </parent>
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.16</version>
+    </dependency>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.36</version>
+    </dependency>
+</dependencies>
+    <repositories>
+        <repository>
+            <id>ppdai</id>
+            <name>panxiaohui</name>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+            <url>http://maven.repo.ppdai.com/nexus/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>ppdai-release</id>
+            <name>panxiaohui</name>
+            <url>http://maven.repo.ppdai.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>ppdai</id>
+            <name>panxiaohui</name>
+            <url>http://maven.repo.ppdai.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

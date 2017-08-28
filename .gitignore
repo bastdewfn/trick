@@ -1,0 +1,12 @@
+/bin
+.*
+!.gitignore
+build
+/logs
+classes
+/classes
+target
+*.iml
+*.ipr
+*.iws
+logs
