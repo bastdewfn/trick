@@ -20,6 +20,8 @@ public class TrickBeanFactory implements FactoryBean<Object>, InitializingBean, 
 
     @Autowired
     private TrickConfig trickConfig;
+    @Autowired(required = false)
+    private ITrickInterceptor trickInterceptor;
 
     @Override
     public Object getObject() throws Exception {
@@ -50,7 +52,7 @@ public class TrickBeanFactory implements FactoryBean<Object>, InitializingBean, 
     public void afterPropertiesSet() throws Exception {
         try {
             trickProperties=   trickConfig.getTrick().get(beanName);
-            proxyObj=  TrickFactoryProxy.CreateInstance(Class.forName(trickProperties.getClassName()),trickProperties);
+            proxyObj=  TrickFactoryProxy.CreateInstance(Class.forName(trickProperties.getClassName()),trickProperties,trickInterceptor);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

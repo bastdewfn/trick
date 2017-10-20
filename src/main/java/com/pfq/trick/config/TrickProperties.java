@@ -9,6 +9,7 @@ import java.util.Map;
  * Created by huwei on 2017/8/4.
  */
 @Configuration
+@SuppressWarnings("unchecked")
 public class TrickProperties {
 
     public String getClassName() {
@@ -38,6 +39,7 @@ public class TrickProperties {
     private String className;
     private String remoteUrl;
     private String httpType;
+
 
     public String getTimeout() {
         return timeout;
@@ -102,6 +104,8 @@ public class TrickProperties {
         }
 
         private String remotePath;
+
+
     }
 
 }

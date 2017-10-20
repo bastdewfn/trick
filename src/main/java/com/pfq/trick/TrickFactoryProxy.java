@@ -11,8 +11,8 @@ public class TrickFactoryProxy {
 
     public TrickFactoryProxy(){}
 
-    public static  <T>  T CreateInstance(Class<T> clazz, TrickProperties trickProperties) throws Exception {
-        Object result = Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, new TrickProxyInstance<T>(clazz,trickProperties));
+    public static  <T>  T CreateInstance(Class<T> clazz, TrickProperties trickProperties,ITrickInterceptor trickInterceptor) throws Exception {
+        Object result = Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, new TrickProxyInstance<T>(clazz,trickProperties,trickInterceptor));
         return clazz.isInstance(result)?clazz.cast(result):null;
     }
 }

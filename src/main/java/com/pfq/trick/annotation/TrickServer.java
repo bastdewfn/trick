@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 /**
  * Created by huwei on 2017/8/7.
  */
-@Target({ElementType.METHOD,ElementType.TYPE})
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface TrickServer {
@@ -19,4 +19,5 @@ public @interface TrickServer {
     String httpType() default "";
 
     int timeOut() default 5000;
+
 }
